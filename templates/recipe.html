@@ -1,0 +1,21 @@
+{% extends "blank_base.html" %}
+{% block title %}{{recipe.title}}{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+
+
+<div class="recipebox">
+
+    <center><u><h1>{{recipe.title}}</h1></u></center><div class="main-recipe"><strong>Ingredients:</strong>
+        <ul>{% for ing in recipe.ingredients %}<li>{{ing}}</li>{% endfor %}</ul><br>
+<strong>Method:</strong><ol>{% for ing in recipe.methods %}<li>{{ing}}</li>{% endfor %}</ol></div><br>
+</li>
+<center><strong>Share (Click to copy):</strong><p onclick="var range = document.createRange();
+    range.selectNode(this);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();">{{request.url}}</p></form><form action="{{url_for('home')}}"><button class="blue-bg round btn" type="submit">Back</button></form></center>
+
+</div>
+{% endblock %}

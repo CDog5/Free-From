@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<center><u><h1>Recipes</h1></u>
+
+    {% for recipe in recipes %}
+
+   
+    <div class="recipebox">
+    <h3>{{recipe.title}}</h3><ul>{% for ff in recipe.ff %}<li>{{ff}}</li>{% endfor %}</ul>
+    <a href="/recipe/{{recipe.id}}/">View</a>
+    </div>
+
+    {% endfor %}
+    </center>{% endblock %}
